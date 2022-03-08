@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+    "content":"probando response json",
+    "userId" : "62250f851731e45383664343"
+}

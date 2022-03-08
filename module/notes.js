@@ -2,7 +2,11 @@ const mongoose = require('mongoose')
 
 const noteSchema = new mongoose.Schema({
     content: String,
-    date: Date
+    date: Date,
+    user: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User'
+    }]
 })
 noteSchema.set('toJSON',{
     transform: (document, returnedObject)=>{
@@ -11,6 +15,6 @@ noteSchema.set('toJSON',{
         delete returnedObject._id
     }
 })
-const Note = mongoose.model('note', noteSchema)
+const Note = mongoose.model('Note', noteSchema)
 
 module.exports = Note
